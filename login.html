@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+<h1>Login</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+            <div class="alert alert-info" role="alert">
+                {{ msg }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+<form method="POST">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input type="Username" class="form-control" name="nm" id="exampleInputUser1" aria-describedby="UserHelp" placeholder="Enter Username">
+      </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" name="em" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="pass" id="exampleInputPassword1" placeholder="Password">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
